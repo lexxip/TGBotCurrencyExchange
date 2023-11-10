@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+# Включение эндпоинтов health для actuator, чтобы kubernetes мог провести пробы жив ли микросервис
+management:
+  server:
+    port: 8090
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+      probes:
+        enabled: true
+
+app:
+  rest:
+    api:
+      prefix: /api
+
+#spring:
+#  profiles:
+#    active: local
